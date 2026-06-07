@@ -323,10 +323,12 @@
       localStorage.setItem('pp-lang', lang);
     }
 
-    // 初始化：优先读 localStorage，其次检测浏览器语言，默认中文
+    // 初始化：优先读 URL 参数（?lang=zh），其次 localStorage，再次浏览器语言，默认中文
     (function () {
+      var param = new URLSearchParams(window.location.search).get('lang');
       var saved = localStorage.getItem('pp-lang');
-      var lang = saved || (navigator.language && navigator.language.startsWith('zh') ? 'zh' : 'en');
+      var browser = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
+      var lang = param || saved || browser;
       switchLang(lang);
     })();
   </script>
