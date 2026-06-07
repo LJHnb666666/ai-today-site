@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – AI Today</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg:         #ffffff;
+      --fg:         #1c1c1e;
+      --secondary:  #6e6e73;
+      --border:     #e5e5ea;
+      --card-bg:    #f2f2f7;
+      --link:       #0071e3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:        #000000;
+        --fg:        #f5f5f7;
+        --secondary: #98989f;
+        --border:    #2c2c2e;
+        --card-bg:   #1c1c1e;
+        --link:      #2997ff;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.75;
+      padding: 48px 24px 100px;
+      max-width: 700px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .app-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .app-name { font-size: 22px; font-weight: 700; }
+    .app-sub  { font-size: 14px; color: var(--secondary); margin-top: 2px; }
+
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .meta { font-size: 14px; color: var(--secondary); margin-bottom: 32px; }
+
+    /* ── Sections ── */
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 36px 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    p  { font-size: 15px; margin-bottom: 12px; }
+    ul { padding-left: 22px; margin-bottom: 12px; }
+    li { font-size: 15px; margin-bottom: 8px; }
+    a  { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { font-weight: 600; }
+
+    /* ── Service cards ── */
+    .service-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .service-name { font-weight: 600; font-size: 15px; margin-bottom: 2px; }
+    .service-desc { font-size: 14px; color: var(--secondary); margin-bottom: 4px; }
+    .service-link { font-size: 13px; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+    footer { font-size: 13px; color: var(--secondary); margin-top: 48px; }
+  </style>
+</head>
+<body>
+
+  <div class="app-badge">
+    <div class="app-icon">🤖</div>
+    <div>
+      <div class="app-name">AI Today</div>
+      <div class="app-sub">Daily AI News</div>
+    </div>
+  </div>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: June 2026</p>
+
+  <p>
+    AI Today ("we", "our", or "the App") respects your privacy. This policy describes
+    what data we collect, why we collect it, and how it is used.
+  </p>
+
+  <!-- 1 -->
+  <h2>1. Data We Collect</h2>
+  <p>The App collects only the minimum data required to function:</p>
+  <ul>
+    <li>
+      <strong>Feedback submissions</strong> — When you use the in-app feedback form,
+      we store the feedback content, your optional email address, the App language setting,
+      and App version. Providing an email is entirely optional.
+    </li>
+    <li>
+      <strong>Push notification token</strong> — If you grant notification permission,
+      OneSignal assigns your device an anonymous identifier so we can deliver
+      daily AI news alerts. This identifier is not linked to any personally
+      identifiable information.
+    </li>
+    <li>
+      <strong>No analytics or tracking</strong> — We do not include any analytics SDK,
+      advertising SDK, or behavioral tracking library in the App.
+    </li>
+  </ul>
+
+  <!-- 2 -->
+  <h2>2. How We Use Your Data</h2>
+  <ul>
+    <li>To send daily AI news push notifications (OneSignal).</li>
+    <li>To read and reply to feedback you voluntarily submit.</li>
+    <li>To improve the App based on aggregated, non-identifiable feedback themes.</li>
+  </ul>
+  <p>We do not sell, rent, or share your data with third parties for advertising purposes.</p>
+
+  <!-- 3 -->
+  <h2>3. Third-Party Services</h2>
+  <p>
+    The App integrates the following third-party services. Each service is governed
+    by its own privacy policy, linked below.
+  </p>
+
+  <ul class="service-list">
+    <li class="service-card">
+      <div class="service-name">Supabase</div>
+      <div class="service-desc">
+        Cloud database used to store and serve AI news content, daily summaries,
+        and in-app feedback submissions.
+      </div>
+      <div class="service-link">
+        <a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy ↗</a>
+      </div>
+    </li>
+
+    <li class="service-card">
+      <div class="service-name">OneSignal</div>
+      <div class="service-desc">
+        Push notification delivery service. Used to send a daily notification
+        when new AI news is available.
+      </div>
+      <div class="service-link">
+        <a href="https://onesignal.com/privacy_policy" target="_blank">onesignal.com/privacy_policy ↗</a>
+      </div>
+    </li>
+
+    <li class="service-card">
+      <div class="service-name">xAI (Grok) / X Platform</div>
+      <div class="service-desc">
+        Used server-side to search and aggregate AI-related posts from X (Twitter).
+        No user data from the App is sent to xAI.
+      </div>
+      <div class="service-link">
+        <a href="https://x.ai/privacy" target="_blank">x.ai/privacy ↗</a>
+      </div>
+    </li>
+
+    <li class="service-card">
+      <div class="service-name">Google Gemini</div>
+      <div class="service-desc">
+        Used server-side to search and summarize AI news via Google Search Grounding.
+        No user data from the App is sent to Google Gemini.
+      </div>
+      <div class="service-link">
+        <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy ↗</a>
+      </div>
+    </li>
+
+    <li class="service-card">
+      <div class="service-name">DeepSeek</div>
+      <div class="service-desc">
+        Used server-side to gather Chinese-language AI news and as an editorial
+        AI to summarize and rank stories. No user data from the App is sent to DeepSeek.
+      </div>
+      <div class="service-link">
+        <a href="https://www.deepseek.com/en/privacy_policy" target="_blank">deepseek.com/privacy_policy ↗</a>
+      </div>
+    </li>
+  </ul>
+
+  <!-- 4 -->
+  <h2>4. Data Retention</h2>
+  <ul>
+    <li>
+      <strong>Feedback data</strong> is retained until you request deletion.
+    </li>
+    <li>
+      <strong>Push tokens</strong> are managed by OneSignal and are removed when
+      you uninstall the App or revoke notification permission in iOS Settings.
+    </li>
+    <li>
+      <strong>News content</strong> cached on your device is stored only in memory
+      and in standard iOS UserDefaults. No personally identifiable data is stored locally.
+    </li>
+  </ul>
+
+  <!-- 5 -->
+  <h2>5. Your Rights &amp; Choices</h2>
+  <ul>
+    <li>
+      <strong>Notifications</strong> — Disable at any time via
+      iOS Settings → Notifications → AI Today.
+    </li>
+    <li>
+      <strong>Feedback data deletion</strong> — Email us at the address below
+      and we will delete your submission.
+    </li>
+    <li>
+      <strong>Language preference</strong> — Stored locally in iOS UserDefaults
+      on your device only; we never receive it.
+    </li>
+  </ul>
+
+  <!-- 6 -->
+  <h2>6. Children's Privacy</h2>
+  <p>
+    The App is not directed to children under 13 years of age. We do not
+    knowingly collect personal information from children.
+  </p>
+
+  <!-- 7 -->
+  <h2>7. Changes to This Policy</h2>
+  <p>
+    We may update this policy from time to time. The "Last updated" date at the
+    top of this page reflects the most recent revision. Continued use of the App
+    after any changes constitutes your acceptance of the updated policy.
+  </p>
+
+  <hr />
+
+  <h2>Contact Us</h2>
+  <p>
+    If you have any questions about this Privacy Policy, please contact us
+    through the Feedback form inside the App.
+  </p>
+
+  <footer>
+    © 2026 AI Today. All rights reserved.
+  </footer>
+
+</body>
+</html>
