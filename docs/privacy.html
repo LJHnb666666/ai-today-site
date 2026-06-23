@@ -3,314 +3,737 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>隐私政策 / Privacy Policy – AI Today</title>
+  <title>隐私政策 / Privacy Policy - AI Today</title>
   <style>
     :root {
       color-scheme: light dark;
-      --bg:        #ffffff;
-      --fg:        #1c1c1e;
+      --bg: #ffffff;
+      --fg: #1c1c1e;
       --secondary: #6e6e73;
-      --border:    #e5e5ea;
-      --card-bg:   #f2f2f7;
-      --link:      #0071e3;
-      --pill-bg:   #e5e5ea;
-      --pill-active-bg:  #1c1c1e;
-      --pill-active-fg:  #ffffff;
+      --muted: #8e8e93;
+      --border: #e5e5ea;
+      --card-bg: #f7f7fa;
+      --link: #0071e3;
+      --pill-bg: #e5e5ea;
+      --pill-active-bg: #1c1c1e;
+      --pill-active-fg: #ffffff;
+      --table-head: #f2f2f7;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg:        #000000;
-        --fg:        #f5f5f7;
-        --secondary: #98989f;
-        --border:    #2c2c2e;
-        --card-bg:   #1c1c1e;
-        --link:      #2997ff;
-        --pill-bg:   #2c2c2e;
-        --pill-active-bg:  #f5f5f7;
-        --pill-active-fg:  #000000;
+        --bg: #000000;
+        --fg: #f5f5f7;
+        --secondary: #a1a1aa;
+        --muted: #8e8e93;
+        --border: #2c2c2e;
+        --card-bg: #1c1c1e;
+        --link: #2997ff;
+        --pill-bg: #2c2c2e;
+        --pill-active-bg: #f5f5f7;
+        --pill-active-fg: #000000;
+        --table-head: #161618;
       }
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-                   "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 22px 96px;
       background: var(--bg);
       color: var(--fg);
-      line-height: 1.75;
-      padding: 48px 24px 100px;
-      max-width: 700px;
-      margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.72;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── App badge ── */
     .app-badge {
       display: flex;
       align-items: center;
       gap: 14px;
       margin-bottom: 28px;
     }
+
     .app-icon {
-      width: 56px; height: 56px;
+      width: 56px;
+      height: 56px;
       border-radius: 14px;
       overflow: hidden;
-      flex-shrink: 0;
+      flex: 0 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
     }
+
     .app-icon img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
-    .app-name { font-size: 22px; font-weight: 700; }
-    .app-sub  { font-size: 14px; color: var(--secondary); margin-top: 2px; }
 
-    /* ── Language switcher ── */
+    .app-name {
+      font-size: 23px;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    .app-sub {
+      margin-top: 2px;
+      font-size: 14px;
+      color: var(--secondary);
+    }
+
     .lang-switcher {
       display: inline-flex;
-      background: var(--pill-bg);
-      border-radius: 100px;
+      gap: 2px;
       padding: 3px;
       margin-bottom: 32px;
-      gap: 2px;
+      border-radius: 999px;
+      background: var(--pill-bg);
     }
+
     .lang-btn {
-      border: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 5px 16px;
       background: transparent;
       color: var(--fg);
+      font: inherit;
       font-size: 14px;
-      font-weight: 500;
-      padding: 5px 16px;
-      border-radius: 100px;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.18s, color 0.18s;
-      font-family: inherit;
     }
+
     .lang-btn.active {
       background: var(--pill-active-bg);
       color: var(--pill-active-fg);
     }
 
-    /* ── Content sections ── */
-    .content { display: none; }
-    .content.active { display: block; }
+    .content {
+      display: none;
+    }
 
-    h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
-    .meta { font-size: 14px; color: var(--secondary); margin-bottom: 32px; }
+    .content.active {
+      display: block;
+    }
+
+    h1 {
+      margin-bottom: 6px;
+      font-size: 30px;
+      line-height: 1.22;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
     h2 {
-      font-size: 18px; font-weight: 600;
-      margin: 36px 0 10px;
+      margin: 36px 0 12px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: 0;
     }
-    p  { font-size: 15px; margin-bottom: 12px; }
-    ul { padding-left: 22px; margin-bottom: 12px; }
-    li { font-size: 15px; margin-bottom: 8px; }
-    a  { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    strong { font-weight: 600; }
 
-    /* ── Service cards ── */
-    .service-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-    .service-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    p, li {
+      font-size: 15px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .meta {
+      margin-bottom: 24px;
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin: 22px 0 28px;
       padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card-bg);
+      color: var(--secondary);
+      font-size: 14px;
     }
-    .service-name { font-weight: 600; font-size: 15px; margin-bottom: 2px; }
-    .service-desc { font-size: 14px; color: var(--secondary); margin-bottom: 4px; }
-    .service-link { font-size: 13px; }
 
-    hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
-    footer { font-size: 13px; color: var(--secondary); margin-top: 48px; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .summary-item {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card-bg);
+    }
+
+    .summary-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--secondary);
+      font-size: 13px;
+    }
+
+    .summary-value {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 14px 0 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 13px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: var(--table-head);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-card {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card-bg);
+    }
+
+    .service-name {
+      margin-bottom: 4px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .service-desc {
+      margin-bottom: 8px;
+      color: var(--secondary);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .service-link {
+      font-size: 13px;
+    }
+
+    hr {
+      margin: 36px 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 36px 18px 80px;
+      }
+
+      .summary-grid,
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+    }
   </style>
 </head>
 <body>
-
   <div class="app-badge">
     <div class="app-icon"><img src="icon.png" alt="AI Today" /></div>
     <div>
       <div class="app-name">AI Today</div>
-      <div class="app-sub">Daily AI News</div>
+      <div class="app-sub">Daily AI News & Insight</div>
     </div>
   </div>
 
-  <!-- Language switcher -->
-  <div class="lang-switcher">
-    <button class="lang-btn" id="btn-zh" onclick="switchLang('zh')">中文</button>
-    <button class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
+  <div class="lang-switcher" aria-label="Language">
+    <button class="lang-btn" id="btn-zh" type="button" onclick="switchLang('zh')">中文</button>
+    <button class="lang-btn" id="btn-en" type="button" onclick="switchLang('en')">English</button>
   </div>
 
-  <!-- ═══════════════════════ 中文内容 ═══════════════════════ -->
-  <div class="content" id="content-zh">
-
+  <main class="content" id="content-zh" lang="zh-Hans">
     <h1>隐私政策</h1>
-    <p class="meta">最后更新：2026年6月7日</p>
+    <p class="meta">最后更新：2026年6月23日</p>
 
-    <p>AI Today（以下简称「本应用」）重视您的隐私。本政策说明我们收集哪些数据、为何收集以及如何使用。</p>
+    <p>AI Today（以下简称“本应用”或“我们”）重视您的隐私。本政策说明本应用在提供每日 AI 新闻、AI Insight、收藏、投票、AI 讨论、反馈和推送通知等功能时，可能收集、使用、存储和共享哪些信息。</p>
 
-    <h2>1. 我们收集的数据</h2>
-    <p>本应用仅收集运行所必需的最少数据：</p>
+    <div class="notice">
+      本政策用于说明本应用当前版本的数据实践，不构成法律意见。若本应用后续新增广告、统计分析、第三方登录、订阅付款或其他功能，我们会相应更新本政策。
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-item">
+        <span class="summary-label">广告与跨 App 追踪</span>
+        <span class="summary-value">不用于广告追踪</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">账号系统</span>
+        <span class="summary-value">邮箱登录 / 注册，由 Supabase Auth 提供</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">AI 讨论</span>
+        <span class="summary-value">会向 DeepSeek 发送必要的对话上下文</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">通知</span>
+        <span class="summary-value">经授权后通过 OneSignal 发送推送</span>
+      </div>
+    </div>
+
+    <h2>1. 我们收集的信息</h2>
+    <p>我们遵循最小必要原则，仅为实现具体功能收集相关信息。不同功能涉及的数据如下：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>功能</th>
+            <th>可能收集的信息</th>
+            <th>用途</th>
+            <th>是否与账号关联</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>账号注册、登录与自动登录</td>
+            <td>邮箱地址、密码认证信息、用户 ID、可选用户名、会话令牌</td>
+            <td>创建和登录账号、验证身份、保持登录状态、同步账号相关功能</td>
+            <td>是</td>
+          </tr>
+          <tr>
+            <td>新闻、每日总结与 AI Insight 浏览</td>
+            <td>通常不需要您主动提供个人信息；应用会从 Supabase 读取公开内容</td>
+            <td>展示每日新闻、趋势总结和 AI Insight</td>
+            <td>否</td>
+          </tr>
+          <tr>
+            <td>收藏</td>
+            <td>用户 ID、收藏对象类型、对象 ID、标题、摘要、内容片段、来源、链接、日期、语言元数据、创建时间</td>
+            <td>保存并跨设备同步您收藏的新闻、趋势和 Insight</td>
+            <td>是</td>
+          </tr>
+          <tr>
+            <td>AI Insight 投票</td>
+            <td>用户 ID、Insight ID、投票类型（赞同/不同意）</td>
+            <td>记录您的投票，防止重复投票，并生成社区统计</td>
+            <td>是</td>
+          </tr>
+          <tr>
+            <td>AI 讨论</td>
+            <td>用户 ID、Insight 标题与内容、您的消息、AI 回复、消息角色、创建时间</td>
+            <td>提供围绕 Insight 的对话功能，保存并同步登录用户的讨论历史</td>
+            <td>是</td>
+          </tr>
+          <tr>
+            <td>意见反馈</td>
+            <td>反馈内容、可选邮箱、应用语言、应用版本</td>
+            <td>处理问题反馈、改进产品；如您提供邮箱，我们可能用于回复</td>
+            <td>取决于您是否提供邮箱</td>
+          </tr>
+          <tr>
+            <td>推送通知</td>
+            <td>推送令牌、设备标识符、设备与系统相关信息、通知订阅状态等 OneSignal SDK 为提供推送服务所需的信息</td>
+            <td>发送每日 AI 新闻更新或重要服务通知</td>
+            <td>通常不与您的 AI Today 账号直接关联</td>
+          </tr>
+          <tr>
+            <td>保存分享图片到相册</td>
+            <td>仅在您主动点击保存时，请求向系统相册写入生成的分享图片</td>
+            <td>将分享卡片保存到您的设备相册</td>
+            <td>否</td>
+          </tr>
+          <tr>
+            <td>本地偏好与会话</td>
+            <td>语言偏好、必要的本地缓存、由 Supabase SDK 保存在 Keychain 中的登录会话</td>
+            <td>记住语言设置、提升体验、恢复登录状态</td>
+            <td>部分与账号相关</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. 我们如何使用信息</h2>
     <ul>
-      <li><strong>意见反馈</strong> — 当您使用应用内反馈表单时，我们会存储反馈内容、您的可选邮箱地址、应用语言设置及版本号。其中语言设置仅用于帮助我们理解问题发生的语言环境，提供邮箱完全出于自愿。</li>
-      <li><strong>推送通知令牌</strong> — 若您授予通知权限，OneSignal 会为您的设备分配一个匿名标识符，用于推送每日 AI 资讯。该标识符不与任何个人身份信息关联。</li>
-      <li><strong>无数据分析，无行为追踪</strong> — 本应用未集成任何数据统计 SDK、广告 SDK 或行为追踪工具。</li>
+      <li>提供、维护和改进本应用的核心功能，包括新闻展示、AI Insight、收藏、投票、AI 讨论、反馈和推送通知。</li>
+      <li>验证您的身份，保持登录状态，并在不同设备间同步账号相关内容。</li>
+      <li>在您主动使用 AI 讨论功能时，将必要的 Insight 上下文、最近对话历史和您的输入发送给 AI 服务提供商，以生成回复。</li>
+      <li>处理您提交的反馈，并在您提供邮箱时与您联系。</li>
+      <li>维护安全、防止滥用、排查故障、履行适用法律或监管要求。</li>
     </ul>
 
-    <h2>2. 数据的使用方式</h2>
-    <ul>
-      <li>通过 OneSignal 推送每日 AI 新闻通知。</li>
-      <li>查阅并回复您自愿提交的反馈（仅在您留有邮箱时）。</li>
-      <li>基于汇总、匿名的反馈主题改进应用体验。</li>
-    </ul>
-    <p>我们不会出售、租用或以广告目的向第三方分享您的数据。</p>
+    <h2>3. AI 讨论功能的重要说明</h2>
+    <p>当您使用“与 AI 讨论”功能时，本应用会把以下内容发送给 DeepSeek API：当前 Insight 的标题和内容、必要的系统提示、最近若干轮对话历史以及您新输入的消息。DeepSeek 返回的回答会显示在应用内。</p>
+    <p>如果您已登录，您的讨论消息和 AI 回复可能会保存到 Supabase，用于提供讨论历史和跨设备同步。请不要在 AI 讨论中输入敏感个人信息、密码、支付信息、健康信息或其他您不希望被处理的信息。</p>
 
-    <h2>3. 第三方服务</h2>
-    <p>本应用直接集成了以下第三方服务，各自适用其独立的隐私政策：</p>
+    <h2>4. 第三方服务</h2>
+    <p>为提供本应用功能，我们会使用以下第三方服务。它们可能根据各自的隐私政策处理相关数据：</p>
 
     <ul class="service-list">
       <li class="service-card">
         <div class="service-name">Supabase</div>
-        <div class="service-desc">云数据库，用于存储和分发 AI 新闻内容、每日总结及应用内反馈。</div>
-        <div class="service-link"><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy ↗</a></div>
+        <div class="service-desc">用于数据库、账号认证、会话管理、收藏、投票、反馈和讨论历史存储。</div>
+        <div class="service-link"><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></div>
       </li>
       <li class="service-card">
         <div class="service-name">OneSignal</div>
-        <div class="service-desc">推送通知服务，用于在每日 AI 新闻更新时向您发送通知。</div>
-        <div class="service-link"><a href="https://onesignal.com/privacy_policy" target="_blank">onesignal.com/privacy_policy ↗</a></div>
+        <div class="service-desc">用于设备推送通知、通知订阅状态和相关推送服务。</div>
+        <div class="service-link"><a href="https://onesignal.com/privacy_policy" target="_blank" rel="noopener noreferrer">onesignal.com/privacy_policy</a></div>
+      </li>
+      <li class="service-card">
+        <div class="service-name">DeepSeek</div>
+        <div class="service-desc">用于 AI 讨论功能，根据您输入的内容和必要上下文生成回复。</div>
+        <div class="service-link"><a href="https://www.deepseek.com/en/privacy" target="_blank" rel="noopener noreferrer">deepseek.com/en/privacy</a></div>
       </li>
     </ul>
 
-    <h2>4. 数据留存</h2>
+    <p>我们不会出售您的个人信息，也不会将您的个人信息用于第三方广告或跨 App 追踪。OneSignal 等第三方 SDK 可能会为提供其服务而处理设备、网络、通知和使用相关信息；我们不会在本应用中配置这些信息用于广告追踪目的。</p>
+
+    <h2>5. 权限说明</h2>
     <ul>
-      <li><strong>反馈数据</strong>：保留至您申请删除为止。</li>
-      <li><strong>推送令牌</strong>：由 OneSignal 管理，卸载应用或撤销通知权限后自动失效。</li>
-      <li><strong>本地缓存</strong>：仅存储在设备内存和 iOS UserDefaults 中，不含任何个人身份信息。</li>
+      <li><strong>通知权限：</strong>用于发送每日 AI 新闻更新或服务相关通知。您可以在 iOS 设置中随时关闭。</li>
+      <li><strong>相册写入权限：</strong>仅在您主动保存分享图片时使用。本应用不会读取您的相册内容。</li>
+      <li><strong>后台远程通知：</strong>用于接收系统推送相关能力，不代表本应用会在后台收集额外个人信息。</li>
     </ul>
 
-    <h2>5. 您的权利与选择</h2>
+    <h2>6. 数据存储与留存</h2>
     <ul>
-      <li><strong>通知</strong> — 可随时前往 iOS 设置 → 通知 → AI Today 关闭。</li>
-      <li><strong>删除反馈数据</strong> — 发送邮件至下方联系地址，我们将删除您的提交记录。</li>
-      <li><strong>语言偏好</strong> — 存储在您设备本地，仅在您主动提交反馈时一并上传，用于帮助我们理解问题所在的语言环境。</li>
+      <li><strong>账号信息：</strong>由 Supabase Auth 管理，并按照其服务规则保存。密码由认证服务处理，本应用不会以明文保存您的密码。</li>
+      <li><strong>收藏、投票、讨论历史：</strong>通常保留至您删除相关内容、删除账号或请求我们删除为止。</li>
+      <li><strong>反馈数据：</strong>通常保留至问题处理完成或您请求删除为止；为排查长期问题，我们可能在合理期限内保留历史反馈。</li>
+      <li><strong>推送令牌：</strong>由 OneSignal 管理。您关闭通知、退出订阅、卸载应用或令牌失效后，相关状态会按 OneSignal 的机制更新。</li>
+      <li><strong>本地数据：</strong>语言偏好和必要缓存保存在您的设备上；登录会话可能由 Supabase SDK 保存在 iOS Keychain 中。</li>
     </ul>
 
-    <h2>6. 内容免责声明</h2>
-    <p>AI Today 对公开 AI 新闻进行聚合与摘要。我们会尽力保证内容准确，但不保证内容的完整性、准确性或实时性。</p>
+    <h2>7. 您的选择与权利</h2>
+    <ul>
+      <li>您可以选择不注册账号；未登录时仍可浏览公开新闻和 Insight，但收藏、投票、讨论历史同步等功能可能不可用。</li>
+      <li>您可以在 iOS 设置中关闭 AI Today 的通知权限。</li>
+      <li>您可以不提供反馈邮箱；不提供邮箱不会影响反馈提交，但我们可能无法回复您。</li>
+      <li>您可以联系我们请求访问、更正或删除与您相关的账号数据、反馈、收藏、投票或讨论历史。为保护账号安全，我们可能需要验证您的身份。</li>
+      <li>您可以在应用中退出登录；退出登录不会自动删除已经存储在云端的账号数据。</li>
+    </ul>
 
-    <h2>7. 儿童隐私</h2>
-    <p>本应用不面向当地法律规定年龄以下的未成年人，我们不会主动收集未成年人的个人信息。</p>
+    <h2>8. 数据安全</h2>
+    <p>我们会采取合理的技术和管理措施保护您的信息，例如使用第三方云服务的认证、访问控制和传输加密能力。但请理解，任何互联网传输或电子存储方式都无法保证 100% 安全。</p>
 
-    <h2>8. 政策变更</h2>
-    <p>我们可能不定期更新本政策。页面顶部的「最后更新」日期反映最近一次修订。继续使用本应用即表示您接受更新后的政策。</p>
+    <h2>9. 跨境处理</h2>
+    <p>本应用使用的第三方服务可能在您所在国家或地区以外处理或存储数据。使用本应用即表示您理解相关数据可能被传输至其他司法辖区，并受当地法律和第三方服务条款约束。</p>
+
+    <h2>10. 儿童隐私</h2>
+    <p>本应用不面向 13 周岁以下儿童，或您所在司法辖区规定的更低/更高年龄以下的未成年人。我们不会故意收集儿童的个人信息。如果您认为儿童向我们提供了个人信息，请联系我们，我们会采取合理措施删除。</p>
+
+    <h2>11. 内容免责声明</h2>
+    <p>AI Today 聚合、整理和总结公开 AI 资讯，并提供 AI 生成的讨论回复。相关内容仅供信息参考，不构成投资、法律、医疗或其他专业建议。我们会努力提升准确性，但不保证内容完整、准确或实时。</p>
+
+    <h2>12. 政策更新</h2>
+    <p>我们可能会不时更新本隐私政策。更新后，我们会修改页面顶部的“最后更新”日期。若更新涉及重大变更，我们会在合理范围内通过应用内提示或其他方式通知您。</p>
 
     <hr />
 
     <h2>联系我们</h2>
-    <p>
-      如您对本隐私政策有任何疑问，请通过应用内的意见反馈功能联系我们，或发送邮件至
-      <a href="mailto:1640159170@qq.com">1640159170@qq.com</a>。
-    </p>
+    <p>如果您对本隐私政策或数据处理有任何问题，或希望行使访问、更正、删除等权利，请通过应用内反馈功能联系我们，或发送邮件至 <a href="mailto:1640159170@qq.com">1640159170@qq.com</a>。</p>
 
     <footer>© 2026 AI Today. 保留所有权利。</footer>
+  </main>
 
-  </div><!-- /content-zh -->
-
-  <!-- ═══════════════════════ English Content ═══════════════════════ -->
-  <div class="content" id="content-en">
-
+  <main class="content" id="content-en" lang="en">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: June 7, 2026</p>
+    <p class="meta">Last updated: June 23, 2026</p>
 
-    <p>AI Today ("we", "our", or "the App") respects your privacy. This policy describes what data we collect, why we collect it, and how it is used.</p>
+    <p>AI Today ("AI Today", "the App", "we", "our", or "us") respects your privacy. This Privacy Policy explains what information may be collected, used, stored, and shared when you use features such as daily AI news, AI Insight, favorites, voting, AI discussion, feedback, and push notifications.</p>
 
-    <h2>1. Data We Collect</h2>
-    <p>The App collects only the minimum data required to function:</p>
+    <div class="notice">
+      This policy describes the data practices of the current version of the App and is not legal advice. If we later add ads, analytics, third-party sign-in, subscriptions, payments, or other features, we will update this policy accordingly.
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-item">
+        <span class="summary-label">Ads and cross-app tracking</span>
+        <span class="summary-value">Not used for advertising tracking</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Account system</span>
+        <span class="summary-value">Email sign-in and sign-up via Supabase Auth</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">AI discussion</span>
+        <span class="summary-value">Required conversation context is sent to DeepSeek</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Notifications</span>
+        <span class="summary-value">Delivered through OneSignal with your permission</span>
+      </div>
+    </div>
+
+    <h2>1. Information We Collect</h2>
+    <p>We follow a data-minimization approach and collect information only as needed for specific features:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Information that may be collected</th>
+            <th>Purpose</th>
+            <th>Linked to your account</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Account sign-up, sign-in, and session restoration</td>
+            <td>Email address, password authentication data, user ID, optional username, and session tokens</td>
+            <td>Create and sign in to your account, verify identity, maintain sessions, and sync account features</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>News, daily summaries, and AI Insight browsing</td>
+            <td>Usually no personal information you actively provide; the App reads public content from Supabase</td>
+            <td>Display daily news, trend summaries, and AI Insight</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Favorites</td>
+            <td>User ID, item type, item ID, title, summary, content snippet, source, URL, date, language metadata, and creation time</td>
+            <td>Save and sync your favorited news, trends, and Insights across devices</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>AI Insight voting</td>
+            <td>User ID, Insight ID, and vote type (agree/disagree)</td>
+            <td>Record your vote, prevent duplicate votes, and generate community statistics</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>AI discussion</td>
+            <td>User ID, Insight title and content, your messages, AI replies, message role, and creation time</td>
+            <td>Provide AI discussion around an Insight and sync discussion history for signed-in users</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Feedback</td>
+            <td>Feedback content, optional email address, App language, and App version</td>
+            <td>Handle issues, improve the App, and reply if you provide an email address</td>
+            <td>Depends on whether you provide an email address</td>
+          </tr>
+          <tr>
+            <td>Push notifications</td>
+            <td>Push token, device identifiers, device and system information, notification subscription status, and other information required by the OneSignal SDK to provide notification services</td>
+            <td>Send daily AI news updates or service-related notifications</td>
+            <td>Usually not directly linked to your AI Today account</td>
+          </tr>
+          <tr>
+            <td>Saving share images to Photos</td>
+            <td>Only when you tap save, the App requests permission to write the generated share image to your photo library</td>
+            <td>Save share cards to your device photo library</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Local preferences and sessions</td>
+            <td>Language preference, necessary local cache, and Supabase SDK session data stored in iOS Keychain</td>
+            <td>Remember language settings, improve the experience, and restore sign-in state</td>
+            <td>Partly account-related</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. How We Use Information</h2>
     <ul>
-      <li><strong>Feedback submissions</strong> — When you use the in-app feedback form, we store the feedback content, your optional email address, the App language setting, and App version. The language setting is included solely to help us understand the context of your feedback. Providing an email is entirely optional.</li>
-      <li><strong>Push notification token</strong> — If you grant notification permission, OneSignal assigns your device an anonymous identifier so we can deliver daily AI news alerts. This identifier is not linked to any personally identifiable information.</li>
-      <li><strong>No analytics or tracking</strong> — We do not include any analytics SDK, advertising SDK, or behavioral tracking library in the App.</li>
+      <li>To provide, maintain, and improve core App features, including news, AI Insight, favorites, voting, AI discussion, feedback, and push notifications.</li>
+      <li>To authenticate you, maintain your session, and sync account-related content across devices.</li>
+      <li>When you actively use AI discussion, to send the required Insight context, recent conversation history, and your input to an AI service provider so a reply can be generated.</li>
+      <li>To process feedback you submit and contact you if you provide an email address.</li>
+      <li>To maintain security, prevent abuse, troubleshoot issues, and comply with applicable legal or regulatory requirements.</li>
     </ul>
 
-    <h2>2. How We Use Your Data</h2>
-    <ul>
-      <li>To send daily AI news push notifications (OneSignal).</li>
-      <li>To read and reply to feedback you voluntarily submit.</li>
-      <li>To improve the App based on aggregated, non-identifiable feedback themes.</li>
-    </ul>
-    <p>We do not sell, rent, or share your data with third parties for advertising purposes.</p>
+    <h2>3. Important Note About AI Discussion</h2>
+    <p>When you use the "Discuss with AI" feature, the App sends the current Insight title and content, required system instructions, recent conversation history, and your latest message to the DeepSeek API. DeepSeek returns a response that is displayed in the App.</p>
+    <p>If you are signed in, your discussion messages and AI replies may be stored in Supabase to provide discussion history and cross-device sync. Please do not enter sensitive personal information, passwords, payment information, health information, or anything else you do not want processed by the AI discussion feature.</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>The App directly integrates the following third-party services, each governed by its own privacy policy:</p>
+    <h2>4. Third-Party Services</h2>
+    <p>We use the following third-party services to provide App functionality. These services may process information according to their own privacy policies:</p>
 
     <ul class="service-list">
       <li class="service-card">
         <div class="service-name">Supabase</div>
-        <div class="service-desc">Cloud database used to store and serve AI news content, daily summaries, and in-app feedback submissions.</div>
-        <div class="service-link"><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy ↗</a></div>
+        <div class="service-desc">Used for database hosting, authentication, session management, favorites, votes, feedback, and discussion history.</div>
+        <div class="service-link"><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></div>
       </li>
       <li class="service-card">
         <div class="service-name">OneSignal</div>
-        <div class="service-desc">Push notification delivery service. Used to send a daily notification when new AI news is available.</div>
-        <div class="service-link"><a href="https://onesignal.com/privacy_policy" target="_blank">onesignal.com/privacy_policy ↗</a></div>
+        <div class="service-desc">Used for device push notifications, notification subscription status, and related notification services.</div>
+        <div class="service-link"><a href="https://onesignal.com/privacy_policy" target="_blank" rel="noopener noreferrer">onesignal.com/privacy_policy</a></div>
+      </li>
+      <li class="service-card">
+        <div class="service-name">DeepSeek</div>
+        <div class="service-desc">Used by the AI discussion feature to generate replies based on your input and required context.</div>
+        <div class="service-link"><a href="https://www.deepseek.com/en/privacy" target="_blank" rel="noopener noreferrer">deepseek.com/en/privacy</a></div>
       </li>
     </ul>
 
-    <h2>4. Data Retention</h2>
+    <p>We do not sell your personal information and do not use your personal information for third-party advertising or cross-app tracking. Third-party SDKs such as OneSignal may process device, network, notification, and usage-related information to provide their services; we do not configure these services in the App for advertising tracking purposes.</p>
+
+    <h2>5. Permissions</h2>
     <ul>
-      <li><strong>Feedback data</strong> is retained until you request deletion.</li>
-      <li><strong>Push tokens</strong> are managed by OneSignal and removed when you uninstall the App or revoke notification permission.</li>
-      <li><strong>Local cache</strong> is stored only in device memory and iOS UserDefaults; no personally identifiable data is stored locally.</li>
+      <li><strong>Notifications:</strong> Used to send daily AI news updates or service-related notifications. You can disable notifications at any time in iOS Settings.</li>
+      <li><strong>Photo library write access:</strong> Used only when you actively save a share image. The App does not read your photo library.</li>
+      <li><strong>Remote notification background mode:</strong> Used for system push-notification capability. It does not mean the App collects additional personal information in the background.</li>
     </ul>
 
-    <h2>5. Your Rights &amp; Choices</h2>
+    <h2>6. Data Storage and Retention</h2>
     <ul>
-      <li><strong>Notifications</strong> — Disable at any time via iOS Settings → Notifications → AI Today.</li>
-      <li><strong>Feedback data deletion</strong> — Email us at the address below and we will delete your submission.</li>
-      <li><strong>Language preference</strong> — Stored locally on your device and only transmitted when you voluntarily submit feedback, to help us understand the language context of your report.</li>
+      <li><strong>Account information:</strong> Managed by Supabase Auth and retained according to its service rules. Passwords are handled by the authentication service; the App does not store your password in plain text.</li>
+      <li><strong>Favorites, votes, and discussion history:</strong> Usually retained until you delete the relevant content, delete your account, or request deletion.</li>
+      <li><strong>Feedback data:</strong> Usually retained until the issue is handled or you request deletion. We may retain historical feedback for a reasonable period to troubleshoot recurring issues.</li>
+      <li><strong>Push tokens:</strong> Managed by OneSignal. If you disable notifications, opt out, uninstall the App, or the token expires, the relevant status is updated according to OneSignal's mechanisms.</li>
+      <li><strong>Local data:</strong> Language preferences and necessary cache are stored on your device; sign-in sessions may be stored in iOS Keychain by the Supabase SDK.</li>
     </ul>
 
-    <h2>6. Content Disclaimer</h2>
-    <p>AI Today aggregates and summarizes publicly available AI news. While we strive for accuracy, we do not guarantee the completeness, accuracy, or reliability of any content displayed in the App.</p>
+    <h2>7. Your Choices and Rights</h2>
+    <ul>
+      <li>You can choose not to create an account. Without signing in, you may still browse public news and Insights, but favorites, voting, discussion history sync, and related features may be unavailable.</li>
+      <li>You can disable notifications for AI Today in iOS Settings.</li>
+      <li>You can submit feedback without providing an email address; however, we may not be able to reply.</li>
+      <li>You may contact us to request access, correction, or deletion of account data, feedback, favorites, votes, or discussion history related to you. To protect account security, we may need to verify your identity.</li>
+      <li>You can sign out in the App. Signing out does not automatically delete account data already stored in the cloud.</li>
+    </ul>
 
-    <h2>7. Children's Privacy</h2>
-    <p>The App is not intended for children under the age required by local law. We do not knowingly collect personal information from minors.</p>
+    <h2>8. Data Security</h2>
+    <p>We use reasonable technical and organizational measures to protect your information, including authentication, access control, and transport encryption capabilities provided by our third-party cloud services. However, no method of Internet transmission or electronic storage is 100% secure.</p>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this policy from time to time. The "Last updated" date at the top reflects the most recent revision. Continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
+    <h2>9. International Processing</h2>
+    <p>The third-party services used by the App may process or store data outside your country or region. By using the App, you understand that relevant data may be transferred to other jurisdictions and may be subject to local laws and third-party service terms.</p>
+
+    <h2>10. Children's Privacy</h2>
+    <p>The App is not directed to children under 13, or the applicable minimum age in your jurisdiction. We do not knowingly collect personal information from children. If you believe a child has provided personal information to us, please contact us and we will take reasonable steps to delete it.</p>
+
+    <h2>11. Content Disclaimer</h2>
+    <p>AI Today aggregates, organizes, and summarizes public AI information and provides AI-generated discussion replies. Content is for informational purposes only and does not constitute investment, legal, medical, or other professional advice. We work to improve accuracy, but we do not guarantee completeness, accuracy, or timeliness.</p>
+
+    <h2>12. Policy Updates</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date above. If changes are material, we will provide notice where reasonably appropriate, such as in the App or through other means.</p>
 
     <hr />
 
     <h2>Contact Us</h2>
-    <p>
-      If you have any questions about this Privacy Policy, please contact us
-      through the Feedback form inside the App, or email
-      <a href="mailto:1640159170@qq.com">1640159170@qq.com</a>.
-    </p>
+    <p>If you have any questions about this Privacy Policy or our data practices, or if you would like to exercise your access, correction, or deletion rights, please contact us through the in-app feedback feature or email us at <a href="mailto:1640159170@qq.com">1640159170@qq.com</a>.</p>
 
     <footer>© 2026 AI Today. All rights reserved.</footer>
-
-  </div><!-- /content-en -->
+  </main>
 
   <script>
     function switchLang(lang) {
-      document.getElementById('content-zh').classList.toggle('active', lang === 'zh');
-      document.getElementById('content-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.documentElement.lang = lang;
-      localStorage.setItem('pp-lang', lang);
+      var zh = document.getElementById("content-zh");
+      var en = document.getElementById("content-en");
+      var btnZh = document.getElementById("btn-zh");
+      var btnEn = document.getElementById("btn-en");
+
+      if (lang === "en") {
+        zh.classList.remove("active");
+        en.classList.add("active");
+        btnZh.classList.remove("active");
+        btnEn.classList.add("active");
+        document.documentElement.lang = "en";
+      } else {
+        en.classList.remove("active");
+        zh.classList.add("active");
+        btnEn.classList.remove("active");
+        btnZh.classList.add("active");
+        document.documentElement.lang = "zh";
+      }
+
+      try {
+        localStorage.setItem("privacy_lang", lang);
+      } catch (error) {
+        // Ignore storage errors.
+      }
     }
 
-    // 初始化：优先读 URL 参数（?lang=zh），其次 localStorage，再次浏览器语言，默认中文
-    (function () {
-      var param = new URLSearchParams(window.location.search).get('lang');
-      var saved = localStorage.getItem('pp-lang');
-      var browser = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
-      var lang = param || saved || browser;
-      switchLang(lang);
+    (function initLanguage() {
+      var saved = null;
+      try {
+        saved = localStorage.getItem("privacy_lang");
+      } catch (error) {
+        saved = null;
+      }
+
+      var browserLang = (navigator.language || "").toLowerCase();
+      var initial = saved || (browserLang.indexOf("zh") === 0 ? "zh" : "en");
+      switchLang(initial);
     })();
   </script>
-
 </body>
 </html>
